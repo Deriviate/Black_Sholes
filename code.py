@@ -4,10 +4,10 @@ def black_scholes_calculator(S, K, T, r, sigma):
     """
     Υπολογίζει την τιμή Option και τα Greeks.
     S: Τρέχουσα Τιμή Μετοχής
-    K: Τιμή Εξάσκησης (Strike Price)
-    T: Χρόνος μέχρι τη λήξη (σε έτη)
-    r: Επιτόκιο (π.χ. 0.05 για 5%)
-    sigma: Μεταβλητότητα (π.χ. 0.25 για 25%)
+    K: Τιμή Εξάσκησης 
+    T: Χρόνος μέχρι τη λήξη
+    r: Επιτόκιο 
+    sigma: Μεταβλητότητα 
     """
     
     # 1. Υπολογισμός d1 και d2
@@ -50,9 +50,14 @@ def black_scholes_calculator(S, K, T, r, sigma):
     print(f"GREEKS (Δείκτες Ρίσκου):")
     print(f"Δ (Delta): {delta:.4f}  (Πιθανότητα & Ταχύτητα)")
     print(f"Γ (Gamma): {gamma:.4f}  (Επιτάχυνση)")
-    print(f"ν (Vega):  {vega/100:.4f}  (Ευαισθησία στο 1% volat.)")
+    print(f"v (Vega):  {vega/100:.4f}  (Ευαισθησία στο 1% volat.)")
     print(f"Θ (Theta): {theta/365:.4f} (Χασούρα ανά ημέρα)")
     print("-" * 30)
 
-# Εκτέλεση της συνάρτησης
+S = 80      # Τρέχουσα Τιμή
+K = 85      # Τιμή Εξάσκησης
+T = 2.0     # Χρόνος (σε έτη)
+r = 0.05    # Επιτόκιο (5%)
+sigma = 0.25 # Μεταβλητότητα (25%)
+
 black_scholes_calculator(S, K, T, r, sigma)
